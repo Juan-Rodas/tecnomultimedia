@@ -12,7 +12,7 @@ class nube {
   }
 
 void dibujar() {
-  image(nub, px, py);
+  image(nub, px, py, width/9, height/10);
 }
 
 void mover(int tecPres) {
@@ -23,6 +23,14 @@ void mover(int tecPres) {
     }
     if (tecPres == LEFT) {
       px -= 5;
+      der = false;
+    }
+    if (tecPres == DOWN) {
+      py += 5;
+      der = true;
+    }
+    if (tecPres == UP) {
+      py -= 5;
       der = false;
     }
 

@@ -1,16 +1,17 @@
 class fondo {
-  PImage f;
-  int f_x;
+  PImage fon;
+  int posy;
   fondo() {
-    f_x = -width;
-    f = loadImage("ciudad.jpg");
+    posy = height/2;
+    fon = loadImage("fon.jpg");
   }
   void dibujarFondo() {
-    image(f, f_x, 0);
+    image(fon, width/2, posy, width, height);
     mover();
   }
   void mover() {
-    f_x = f_x<0 ? f_x : -width;
-    f_x ++;
+
+    posy = posy<height ? posy : height/2;
+    posy ++;
   }
 }

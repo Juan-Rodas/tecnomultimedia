@@ -1,28 +1,22 @@
 //Nombre: Rodas juan
 //Legajo: 91405/0
+fondo f;
+nube n;
+lluvia l;
+void setup() {
+  size(640, 480);
+  f= new fondo();
+  n = new nube();
+  l = new lluvia();
+}
+void draw() {
+  f.dibujarFondo();
+  n.dibujar();
+  l.dibujarL();
 
-class principal {
-  fondo f;
-  nube n;
-  principal() {
-    size(640, 480);
-    f= new fondo();
-    n = new nube();
+  if (keyPressed) {
+    n.mover(keyCode);
+    
   }
-  void d() {
-    f.dibujarFondo();
-    n.dibujar();
-    if (keyPressed) {
-      n.mover(keyCode);
-    }
-    println(keyCode);
-  }
-  void keyPressed() {
-    if (key=='W' || key=='w') {
-      n.moverArriba();
-    }
-    if (key=='S' || key=='s' ) {
-      n.moverAbajo();
-    }
-  }
+  println(keyCode);
 }
