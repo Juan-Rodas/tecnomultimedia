@@ -1,8 +1,10 @@
 class lluvia {
   PImage llu;
+  int tamaño;
   float posy, posx, M;
   boolean visible, perder;
   lluvia() {
+    tamaño=24;
     posy=random(0, 200);
     posx=random(0, width);
     visible=true;
@@ -12,7 +14,7 @@ class lluvia {
   void lluviaps() {
     M=random(2, 3);
     if (visible) {
-      image(llu, posx, posy, width/25, height/25);
+      image(llu, posx, posy, tamaño, tamaño);
     } else {
       posy=height-100;
       M=0;

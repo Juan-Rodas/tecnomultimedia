@@ -1,9 +1,10 @@
 class nube {
   int px, py;
-  int mov;
+  int mov,tam;
   boolean der;
   PImage nub;
   nube() {
+    tam=60;
     nub = loadImage("nube.png");
     px = width/2;
     py = height/2;
@@ -12,11 +13,11 @@ class nube {
   }
 
   void dibujar() {
-    image(nub, px, py, width/9, height/10);
+    image(nub, px, py, tam, tam);
   }
 
   void mover(int tecPres) {
-    if (frameCount%6==0) {
+    if (frameCount%1==0) {
       if (tecPres == RIGHT) {
         px += 5;
         der = true;
@@ -37,12 +38,5 @@ class nube {
       mov++;
       mov = mov%7;
     }
-  }
-
-  void mArriba() {
-    py -= 20;
-  }
-  void mAbajo() {
-    py += 20;
   }
 }
